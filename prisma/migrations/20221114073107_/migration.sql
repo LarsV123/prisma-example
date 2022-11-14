@@ -1,0 +1,12 @@
+-- CreateTable
+CREATE TABLE "Job" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+);
+
+-- CreateTable
+CREATE TABLE "JobSignup" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "jobId" INTEGER NOT NULL,
+    "position" TEXT,
+    CONSTRAINT "JobSignup_jobId_fkey" FOREIGN KEY ("jobId") REFERENCES "Job" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
